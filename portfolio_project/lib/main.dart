@@ -5,6 +5,7 @@ import 'package:portfolio_project/education_section.dart';
 import 'package:portfolio_project/home_section.dart';
 import 'package:portfolio_project/navigation.dart';
 import 'package:portfolio_project/skill_section.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 void main() {
   runApp(const PortfolioApp());
@@ -58,6 +59,7 @@ class PortfolioHomePage extends StatefulWidget {
 class _PortfolioHomePageState extends State<PortfolioHomePage> {
   final ScrollController _scrollController = ScrollController();
   final List<GlobalKey> _sectionKeys = List.generate(5, (_) => GlobalKey());
+  int _currentIndex = 0;
 
   void _scrollToSection(int index) {
     final context = _sectionKeys[index].currentContext;
@@ -68,6 +70,9 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
         curve: Curves.easeInOut,
       );
     }
+    setState(() {
+      _currentIndex = index;
+    });
   }
 
   @override
@@ -78,6 +83,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final bool isMobile = !kIsWeb;
     return Scaffold(
       body: SingleChildScrollView(
         controller: _scrollController,
@@ -92,6 +98,34 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
           ],
         ),
       ),
+      bottomNavigationBar: isMobile
+          ? BottomNavigationBar(
+              currentIndex: _currentIndex,
+              onTap: _scrollToSection,
+              backgroundColor: Colors.white,
+              selectedItemColor: Colors.blue,
+              unselectedItemColor: Colors.grey[800],
+              items: const [
+                BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.person),
+                  label: 'About',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.school),
+                  label: 'Education',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.build),
+                  label: 'Skills',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.contact_mail),
+                  label: 'Contact',
+                ),
+              ],
+            )
+          : null,
     );
   }
 }

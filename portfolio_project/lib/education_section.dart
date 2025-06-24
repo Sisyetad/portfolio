@@ -34,15 +34,12 @@ class EducationSection extends StatelessWidget {
             leading: Icon(Icons.school, color: Colors.white),
             title: Text(
               'Bachelor of Science in Computer Science and ML',
-              style: TextStyle(fontSize: 16),
-            ),
-            subtitle: Text(
-              'A2SV, 2025 - 2026',
               style: TextStyle(
                 fontSize: 16,
                 color: Color.fromARGB(200, 200, 200, 200),
               ),
             ),
+            subtitle: Text('A2SV, 2025 - 2026', style: TextStyle(fontSize: 14)),
           ),
         ],
       ),

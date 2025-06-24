@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_project/usecase.dart';
 
@@ -6,6 +7,7 @@ class AboutSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isMobile = !kIsWeb;
     return Container(
       padding: const EdgeInsets.all(40),
       child: Row(
@@ -41,10 +43,15 @@ class AboutSection extends StatelessWidget {
             ),
           ),
           SizedBox(width: 20),
-          const CircleAvatar(
-            radius: 60,
-            backgroundImage: AssetImage('images/portfolio.jpg'),
-          ),
+          isMobile
+              ? CircleAvatar(
+                  radius: 60,
+                  backgroundImage: AssetImage('images/portfolio.jpg'),
+                )
+              : CircleAvatar(
+                  radius: 100,
+                  backgroundImage: AssetImage('images/portfolio.jpg'),
+                ),
         ],
       ),
     );

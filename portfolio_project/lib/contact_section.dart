@@ -1,4 +1,3 @@
-import 'dart:html' as html;
 import 'package:flutter/material.dart';
 import 'package:portfolio_project/usecase.dart';
 
@@ -71,31 +70,18 @@ class ContactSection extends StatelessWidget {
                 return;
               }
 
-              final subject = Uri.encodeComponent(
-                'Portfolio Contact Form Submission',
-              );
-              final body = Uri.encodeComponent(
-                'Name: ${nameController.text}\n'
-                'Email: ${emailController.text}\n'
-                'Message: ${messageController.text}',
-              );
+              final subject = 'Portfolio Contact Form Submission';
+              final body =
+                  'Name: ${nameController.text}\n'
+                  'Email: ${emailController.text}\n'
+                  'Message: ${nameController.text}';
 
-              final mailtoLink =
-                  'mailto:sisaytadewos@gmail.com?subject=$subject&body=$body';
               final useCase = UseCase(
                 name: 'Email',
                 description: 'Message me via email',
-                url: 'mailtoLink',
+                url: 'mailto:sisaytadewos@gmail.com',
               );
-              useCase.launchEmail(
-                mailtoLink,
-                'Portfolio Contact Form Submission',
-                '''
-              Name: ${nameController.text}
-              Email: ${emailController.text}
-              Message: ${messageController.text}
-              ''',
-              );
+              useCase.launchEmail('sisaytadewos@gmail.com', subject, body);
 
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(content: Text('Opening email client...')),
@@ -107,25 +93,22 @@ class ContactSection extends StatelessWidget {
             },
             child: const Text('Submit'),
           ),
-
           const SizedBox(height: 24),
           Row(
             children: [
               IconButton(
-                icon: const Icon(Icons.link),
-                color: Colors.white,
+                icon: const Icon(Icons.link, color: Colors.white),
                 onPressed: () {
                   final useCase = UseCase(
-                    name: 'GitHub',
-                    description: 'My GitHub Profile',
+                    name: 'LinkedIn',
+                    description: 'My LinkedIn Profile',
                     url: 'https://linkedin.com/in/sisay-tadewos-790228275',
                   );
                   useCase.launchURL(useCase.url);
                 },
               ),
               IconButton(
-                icon: const Icon(Icons.code),
-                color: Colors.white,
+                icon: const Icon(Icons.code, color: Colors.white),
                 onPressed: () {
                   final useCase = UseCase(
                     name: 'GitHub',
@@ -136,25 +119,15 @@ class ContactSection extends StatelessWidget {
                 },
               ),
               IconButton(
-                icon: const Icon(Icons.email),
-                color: Colors.white,
+                icon: const Icon(Icons.email, color: Colors.white),
                 onPressed: () {
                   final useCase = UseCase(
-                    name: 'GitHub',
-                    description: 'My GitHub Profile',
+                    name: 'Email',
+                    description: 'My Email',
                     url: 'mailto:sisaytadewos@gmail.com',
                   );
                   useCase.launchURL(useCase.url);
                 },
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  html.window.open(
-                    'mailto:sisaytadewos@gmail.com?subject=Hello&body=This is a test email from Flutter Web',
-                    '_blank',
-                  );
-                },
-                child: Text('Send Test Email'),
               ),
             ],
           ),

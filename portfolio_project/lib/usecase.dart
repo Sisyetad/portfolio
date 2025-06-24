@@ -1,4 +1,3 @@
-import 'dart:html' as html;
 import 'package:url_launcher/url_launcher.dart';
 
 class UseCase {
@@ -15,14 +14,17 @@ class UseCase {
     }
   }
 
-  void launchEmail(String toEmail, String subject, String body) {
+  Future<void> launchEmail(String toEmail, String subject, String body) async {
     final Uri emailUri = Uri(
       scheme: 'mailto',
       path: toEmail,
-      queryParameters: {'subject': subject, 'body': body},
+      queryParameters: {
+        'subject': Uri.encodeComponent(subject),
+        'body': Uri.encodeComponent(body),
+      },
     );
-
-    // This opens the link in a new browser tab (works reliably on web)
-    html.window.open(emailUri.toString(), '_blank');
+    if (!await launchUrl(emailUri)) {
+      print('Could not launch email client');
+    }
   }
 }

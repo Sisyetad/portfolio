@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 class NavBar extends StatelessWidget {
   final Function(int) onNavTap;
@@ -8,6 +9,7 @@ class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isWide = MediaQuery.of(context).size.width > 768;
+    final isMobile = !kIsWeb;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       color: Colors.black87,
@@ -32,7 +34,7 @@ class NavBar extends StatelessWidget {
                 _NavItem(text: 'Contact', onTap: () => onNavTap(4)),
               ],
             )
-          else
+          else if (!isMobile)
             IconButton(
               icon: const Icon(Icons.menu, color: Colors.white),
               onPressed: () {

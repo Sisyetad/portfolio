@@ -16,7 +16,7 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
 
     defaultConfig {
@@ -41,4 +41,8 @@ android {
 
 flutter {
     source = "../.."
+}
+
+kotlin {
+    jvmToolchain(17)
 }

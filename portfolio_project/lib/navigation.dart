@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_project/responsive.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
 class NavBar extends StatelessWidget {
@@ -13,77 +14,87 @@ class NavBar extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       color: Colors.black87,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const Text(
-            'Portfolio',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
+      child: MaxWidthContainer(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text(
+              'Portfolio',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-          if (isWide)
-            Row(
-              children: [
-                _NavItem(text: 'Home', onTap: () => onNavTap(0)),
-                _NavItem(text: 'About', onTap: () => onNavTap(1)),
-                _NavItem(text: 'Education', onTap: () => onNavTap(2)),
-                _NavItem(text: 'Skills', onTap: () => onNavTap(3)),
-                _NavItem(text: 'Contact', onTap: () => onNavTap(4)),
-              ],
-            )
-          else if (!isMobile)
-            IconButton(
-              icon: const Icon(Icons.menu, color: Colors.white),
-              onPressed: () {
-                showModalBottomSheet(
-                  context: context,
-                  builder: (context) => Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      ListTile(
-                        title: const Text('Home'),
-                        onTap: () {
-                          onNavTap(0);
-                          Navigator.pop(context);
-                        },
-                      ),
-                      ListTile(
-                        title: const Text('About'),
-                        onTap: () {
-                          onNavTap(1);
-                          Navigator.pop(context);
-                        },
-                      ),
-                      ListTile(
-                        title: const Text('Education'),
-                        onTap: () {
-                          onNavTap(2);
-                          Navigator.pop(context);
-                        },
-                      ),
-                      ListTile(
-                        title: const Text('Skills'),
-                        onTap: () {
-                          onNavTap(3);
-                          Navigator.pop(context);
-                        },
-                      ),
-                      ListTile(
-                        title: const Text('Contact'),
-                        onTap: () {
-                          onNavTap(4);
-                          Navigator.pop(context);
-                        },
-                      ),
-                    ],
-                  ),
-                );
-              },
-            ),
-        ],
+            if (isWide)
+              Row(
+                children: [
+                  _NavItem(text: 'Home', onTap: () => onNavTap(0)),
+                  _NavItem(text: 'About', onTap: () => onNavTap(1)),
+                  _NavItem(text: 'Experience', onTap: () => onNavTap(2)),
+                  _NavItem(text: 'Education', onTap: () => onNavTap(3)),
+                  _NavItem(text: 'Skills', onTap: () => onNavTap(4)),
+                  _NavItem(text: 'Contact', onTap: () => onNavTap(5)),
+                ],
+              )
+            else if (!isMobile)
+              IconButton(
+                icon: const Icon(Icons.menu, color: Colors.white),
+                onPressed: () {
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (context) => Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        ListTile(
+                          title: const Text('Home'),
+                          onTap: () {
+                            onNavTap(0);
+                            Navigator.pop(context);
+                          },
+                        ),
+                        ListTile(
+                          title: const Text('About'),
+                          onTap: () {
+                            onNavTap(1);
+                            Navigator.pop(context);
+                          },
+                        ),
+                        ListTile(
+                          title: const Text('Experience'),
+                          onTap: () {
+                            onNavTap(2);
+                            Navigator.pop(context);
+                          },
+                        ),
+                        ListTile(
+                          title: const Text('Education'),
+                          onTap: () {
+                            onNavTap(3);
+                            Navigator.pop(context);
+                          },
+                        ),
+                        ListTile(
+                          title: const Text('Skills'),
+                          onTap: () {
+                            onNavTap(4);
+                            Navigator.pop(context);
+                          },
+                        ),
+                        ListTile(
+                          title: const Text('Contact'),
+                          onTap: () {
+                            onNavTap(5);
+                            Navigator.pop(context);
+                          },
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+          ],
+        ),
       ),
     );
   }

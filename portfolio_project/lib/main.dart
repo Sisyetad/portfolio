@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_project/about_section.dart';
 import 'package:portfolio_project/contact_section.dart';
 import 'package:portfolio_project/education_section.dart';
+import 'package:portfolio_project/experience_section.dart';
 import 'package:portfolio_project/home_section.dart';
 import 'package:portfolio_project/navigation.dart';
 import 'package:portfolio_project/skill_section.dart';
@@ -58,7 +59,7 @@ class PortfolioHomePage extends StatefulWidget {
 
 class _PortfolioHomePageState extends State<PortfolioHomePage> {
   final ScrollController _scrollController = ScrollController();
-  final List<GlobalKey> _sectionKeys = List.generate(5, (_) => GlobalKey());
+  final List<GlobalKey> _sectionKeys = List.generate(6, (_) => GlobalKey());
   int _currentIndex = 0;
 
   void _scrollToSection(int index) {
@@ -92,9 +93,10 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
             NavBar(onNavTap: _scrollToSection),
             HomeSection(key: _sectionKeys[0]),
             AboutSection(key: _sectionKeys[1]),
-            EducationSection(key: _sectionKeys[2]),
-            SkillsSection(key: _sectionKeys[3]),
-            ContactSection(key: _sectionKeys[4]),
+            ExperienceSection(key: _sectionKeys[2]),
+            EducationSection(key: _sectionKeys[3]),
+            SkillsSection(key: _sectionKeys[4]),
+            ContactSection(key: _sectionKeys[5]),
           ],
         ),
       ),
@@ -110,6 +112,10 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                 BottomNavigationBarItem(
                   icon: Icon(Icons.person),
                   label: 'About',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.work),
+                  label: 'Experience',
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.school),

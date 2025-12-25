@@ -185,11 +185,6 @@ class _ContactSectionState extends State<ContactSection> {
                   url: 'https://creativemind-five.vercel.app/',
                 ),
                 _LinkChip(
-                  label: 'Email',
-                  icon: Icons.email,
-                  url: 'mailto:sisaytadewos@gmail.com',
-                ),
-                _LinkChip(
                   label: 'Resume (PDF)',
                   icon: Icons.picture_as_pdf,
                   url: 'assets/resume.pdf',

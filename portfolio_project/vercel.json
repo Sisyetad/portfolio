@@ -1,4 +1,6 @@
 {
+  "buildCommand": "git clone https://github.com/flutter/flutter.git -b stable --depth 1 && PATH=\"$PATH:$(pwd)/flutter/bin\" flutter build web",
+  "outputDirectory": "build/web",
   "routes": [
     {
       "src": "/(.*)",

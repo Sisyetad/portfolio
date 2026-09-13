@@ -1,0 +1,20 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#121820"/>
+      <stop offset="100%" stop-color="#0B1014"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4FD1C5"/>
+      <stop offset="100%" stop-color="#2E7A72"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <g opacity="0.5">
+    <line x1="0" y1="0" x2="800" y2="1000" stroke="#212A34" stroke-width="1"/>
+    <line x1="800" y1="0" x2="0" y2="1000" stroke="#212A34" stroke-width="1"/>
+  </g>
+  <circle cx="400" cy="430" r="140" fill="none" stroke="url(#ring)" stroke-width="3"/>
+  <text x="400" y="460" font-family="monospace" font-size="96" fill="#E6ECF1" text-anchor="middle">ST</text>
+  <text x="400" y="700" font-family="monospace" font-size="20" fill="#576270" text-anchor="middle">/public/images/profile.jpg</text>
+</svg>

@@ -1,0 +1,59 @@
+import type { Metadata } from "next";
+import { Space_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import "./globals.css";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
+import CustomCursor from "@/components/CustomCursor";
+import EasterEggs from "@/components/EasterEggs";
+
+const display = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const sans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const mono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: "Sisay Tadewos — Full-Stack & AI Engineer",
+  description:
+    "Full-stack and AI engineer building production-grade backend, RAG, and multi-agent systems — including a national-scale offline-first clinical AI platform.",
+  metadataBase: new URL("https://example.com"),
+  openGraph: {
+    title: "Sisay Tadewos — Full-Stack & AI Engineer",
+    description:
+      "Full-stack and AI engineer building production-grade backend, RAG, and multi-agent systems.",
+    type: "website",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
+      <body className="font-sans bg-bg text-ink antialiased">
+        <CustomCursor />
+        <EasterEggs />
+        <SiteHeader />
+        <main>{children}</main>
+        <SiteFooter />
+      </body>
+    </html>
+  );
+}

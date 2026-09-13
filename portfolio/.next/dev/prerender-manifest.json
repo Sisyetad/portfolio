@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/projects/offline-first-clinical-decision-support":{},"/projects/self-initiated-ai-platform":{},"/projects/salvation-day":{},"/projects/spotter-labs-fuel-optimization":{},"/projects/hew-ai-echis":{},"/projects/grammar-guided-generative-programming":{}},"dynamicRoutes":{"/projects/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/projects/[slug]","routeRegex":"^\\/projects\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"302f7864ca9c32fb3f52facf86107a0f","previewModeSigningKey":"ef708b9f5f0689d3a7f6c1f1b4e45e510a549feeda73aa80a1e2d6215d7beeb0","previewModeEncryptionKey":"474ed1eeb5303679925f2440a02037577d284fe901014f1fac34c21ffa372b4a"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "af68576da21ee667b567a742629610f8",
+    "previewModeSigningKey": "ebf42a32ee307bc99e98d94fc1a58e1f30ba0cdc33529b5aa1b7301305a48f30",
+    "previewModeEncryptionKey": "ebf11cf51114e93423376cdba216da5070bc726edc048ef9f5fbe0fb0cb0d4ff"
+  }
+}

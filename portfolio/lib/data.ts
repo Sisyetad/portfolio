@@ -768,8 +768,8 @@ export const profileImageUrl =
 // channel handle and add entries as you post — no component changes needed.
 // ---------------------------------------------------------------------------
 export const telegramChannel = {
-  handle: "[add_telegram_channel_username]", // e.g. "sisay_builds" (without the @)
-  displayName: "@[add_telegram_channel_username]",
+  handle: "creativemindnet", // e.g. "sisay_builds" (without the @)
+  displayName: "@creativemindnet",
 };
 
 export interface BlogHighlight {

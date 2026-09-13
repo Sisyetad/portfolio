@@ -1218,8 +1218,8 @@ const contact = {
 };
 const profileImageUrl = "https://res.cloudinary.com/dxwakqqlg/image/upload/v1788796751/salvation_day/testimonies/photo_2026-06-19_18-44-13_90387b8b.jpg";
 const telegramChannel = {
-    handle: "[add_telegram_channel_username]",
-    displayName: "@[add_telegram_channel_username]"
+    handle: "creativemindnet",
+    displayName: "@creativemindnet"
 };
 const blogHighlights = [];
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {

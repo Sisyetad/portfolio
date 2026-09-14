@@ -1,6 +1,0 @@
-# Dependencies
-./portfolio/node_modules/*
-
-# Next.js
-./portfolio/.next/*
-./portfolio/out/*

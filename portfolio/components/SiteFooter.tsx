@@ -2,6 +2,7 @@ import { contact } from "@/lib/data";
 import { FiMail } from "react-icons/fi";
 import { FaLinkedin } from "react-icons/fa6";
 import { SiGithub, SiUpwork } from "react-icons/si";
+import VisitorCounter from "@/components/VisitorCounter";
 
 export default function SiteFooter() {
   const hasGithub = contact.githubUsername && !contact.githubUsername.startsWith("add-");
@@ -90,7 +91,10 @@ export default function SiteFooter() {
         </div>
 
         <div className="mt-16 flex flex-col gap-2 border-t border-line pt-6 text-[12px] text-faint md:flex-row md:items-center md:justify-between">
-          <p>© {new Date().getFullYear()} Sisay Tadewos.</p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <p>© {new Date().getFullYear()} Sisay Tadewos.</p>
+            <VisitorCounter />
+          </div>
           <div className="flex items-center gap-4">
             <p>Built with Next.js, TypeScript &amp; Tailwind CSS.</p>
             {/* easter egg — deliberately unlabeled and low-contrast */}

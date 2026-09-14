@@ -1,8 +1,0 @@
-{
-  "/_global-error/page": "/_global-error",
-  "/_not-found/page": "/_not-found",
-  "/blog/page": "/blog",
-  "/page": "/",
-  "/play/page": "/play",
-  "/projects/[slug]/page": "/projects/[slug]"
-}
